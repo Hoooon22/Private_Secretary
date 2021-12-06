@@ -8,6 +8,11 @@ namespace Private_Secretary
 {
     class Program
     {
+        async static Task FromMic(SpeechConfig speechConfig)
+        {
+
+        }
+
         async static Task Main(string[] args)
         {
             // 음성 SDK를 사용하여 음성 서비스를 호출
