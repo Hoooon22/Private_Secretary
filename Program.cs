@@ -8,6 +8,7 @@ namespace Private_Secretary
 {
     class Program
     {
+        // Speech to Text - from Mic
         async static Task FromMic(SpeechConfig speechConfig)
         {
             using var audioConfig = AudioConfig.FromDefaultMicrophoneInput();
