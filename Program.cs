@@ -15,7 +15,7 @@ namespace Private_Secretary
 
             Console.WriteLine("Speak into your microphone.");
             var result = await recognizer.RecognizeOnceAsync();
-            Console.WriteLine($"RECOGNIZED: Text={result.Text}");
+            // Console.WriteLine($"RECOGNIZED: Text={result.Text}");
             // error
             switch (result.Reason)
             {
