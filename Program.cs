@@ -47,7 +47,7 @@ namespace Private_Secretary
             // 음성 SDK를 사용하여 음성 서비스를 호출
             var speechConfig = SpeechConfig.FromSubscription("e1d9172eea8241a7aa993ed74df9b886", "koreacentral");
 
-            speech_str =  await FromMic(speechConfig);
+            speech_str = await FromMic(speechConfig);
             Console.WriteLine($"speech_str Test : {speech_str}");
         }
     }
