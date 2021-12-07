@@ -21,7 +21,7 @@ namespace Private_Secretary
             switch (result.Reason)
             {
                 case ResultReason.RecognizedSpeech:
-                    Console.WriteLine($"RECOGNIZED: Text={result.Text}");
+                    // Console.WriteLine($"RECOGNIZED: Text={result.Text}");
                     break;
                 case ResultReason.NoMatch:
                     Console.WriteLine($"NOMATCH: Speech could not be recognized.");
