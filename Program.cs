@@ -14,7 +14,6 @@ namespace Private_Secretary
             using var audioConfig = AudioConfig.FromDefaultMicrophoneInput();
             using var recognizer = new SpeechRecognizer(speechConfig, audioConfig);
 
-
             Console.WriteLine("Speak into your microphone.");
             var result = await recognizer.RecognizeOnceAsync();
             // Console.WriteLine($"RECOGNIZED: Text={result.Text}");
