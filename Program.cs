@@ -58,6 +58,8 @@ namespace Private_Secretary
                     {
                         // connect URL
                         cDriver.Url = "https://www.google.com";
+                        var searchBox = cDriver.FindElement(By.XPath("//*[@id='input']"));
+                        var searchButton = cDriver.FindElement(By.XPath("//*[@id='icon']"));
                     }
                 }
                 catch (Exception e)
