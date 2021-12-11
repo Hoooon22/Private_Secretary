@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Diagnostics;
 // CognitiveServices Library
 using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
@@ -53,7 +54,11 @@ namespace Private_Secretary
             {
                 try
                 {
-
+                    using (IWebDriver cDriver = new ChromeDriver())
+                    {
+                        // connect URL
+                        cDriver.Url = "https://www.google.com";
+                    }
                 }
                 catch (Exception e)
                 {
@@ -70,7 +75,7 @@ namespace Private_Secretary
 
             speech_str = await FromMic(speechConfig);
             Console.WriteLine($"speech_str Test : {speech_str}");
-            await Interpretation(speech_str);
+            await Interpretation("search");
         }
     }
 }
