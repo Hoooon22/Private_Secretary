@@ -41,6 +41,12 @@ namespace Private_Secretary
             return result.Text;
         }
 
+        // Interpretation using speech str
+        async static Task Interpretation(string str)
+        {
+
+        }
+
         async static Task Main(string[] args)
         {
             var speech_str = "";
