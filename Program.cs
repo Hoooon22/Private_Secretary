@@ -2,6 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 // CognitiveServices Library
 using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
@@ -56,16 +57,18 @@ namespace Private_Secretary
                 {
                     using (IWebDriver cDriver = new ChromeDriver())
                     {
+                        str = Regex.Replace(str, "[.]", string.Empty);
                         string[] search_word = str.Split(' ');
-                        search_word[1].Replace(".", "");
 
                         // connect URL
                         cDriver.Url = "https://www.google.com";
                         cDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
+                        // search
                         var searchBox = cDriver.FindElement(By.XPath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div[2]/div[2]/input"));
                         searchBox.SendKeys(search_word[1]);
                         searchBox.SendKeys(Keys.Enter);
+                        cDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
                     }
                 }
                 catch (Exception e)
