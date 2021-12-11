@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 
@@ -44,7 +45,17 @@ namespace Private_Secretary
         // Interpretation using speech str
         async static Task Interpretation(string str)
         {
+            if (str.Contains("Search") || str.Contains("search")) // Internet Search 
+            {
+                try
+                {
 
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message.ToString());
+                }
+            }
         }
 
         async static Task Main(string[] args)
@@ -55,6 +66,7 @@ namespace Private_Secretary
 
             speech_str = await FromMic(speechConfig);
             Console.WriteLine($"speech_str Test : {speech_str}");
+            await Interpretation(speech_str);
         }
     }
 }
