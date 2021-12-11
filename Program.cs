@@ -58,7 +58,11 @@ namespace Private_Secretary
                     {
                         // connect URL
                         cDriver.Url = "https://www.google.com";
-                        var searchBox = cDriver.FindElement(By.XPath("//*[@id='input']"));
+                        cDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
+                        var searchBox = cDriver.FindElement(By.XPath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div[2]/div[2]/input"));
+                        searchBox.SendKeys(str);
+                        searchBox.SendKeys(Keys.Enter);
                     }
                 }
                 catch (Exception e)
@@ -76,7 +80,7 @@ namespace Private_Secretary
 
             speech_str = await FromMic(speechConfig);
             Console.WriteLine($"speech_str Test : {speech_str}");
-            await Interpretation("search");
+            await Interpretation(speech_str);
         }
     }
 }
