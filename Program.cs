@@ -1,8 +1,13 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+// CognitiveServices Library
 using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
+// Selenium Library
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 
 namespace Private_Secretary
 {
