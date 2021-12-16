@@ -68,6 +68,9 @@ namespace Private_Secretary
                         var searchBox = cDriver.FindElement(By.XPath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div[2]/div[2]/input"));
                         searchBox.SendKeys(search_word[1]);
                         searchBox.SendKeys(Keys.Enter);
+
+                        //
+                        await Task.Delay(1000);
                     }
                 }
                 catch (Exception e)
